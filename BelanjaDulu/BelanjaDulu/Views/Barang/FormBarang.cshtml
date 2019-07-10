@@ -1,0 +1,24 @@
+﻿@model BelanjaDulu.Models.Keranjang
+
+
+@{
+    ViewBag.title = "Form Barang";
+    Layout = "~/Views/Shared/LayoutKeranjang.cshtml";
+}
+@section header{
+    <h4>Tambah Barang</h4>
+}
+<form action="~/tambah" method="post">
+    <div>
+        @Html.TextBoxFor(barang => barang.BarangId, new { @class = "form-control-plaintext", placeholder = "Id Barang" })
+        @Html.ValidationMessageFor(barang => barang.BarangId)
+        @Html.TextBoxFor(barang => barang.NamaBarang, new { @class = "form-control-plaintext", placeholder = "Nama Barang" })
+        @Html.ValidationMessageFor(barang => barang.NamaBarang)
+        @Html.TextBoxFor(barang => barang.HargaBarang, new { @class = "form-control-plaintext", placeholder = "Harga Barang" })
+        @Html.ValidationMessageFor(barang => barang.HargaBarang)
+        @Html.TextBoxFor(barang => barang.JumlahBarang, new { @class = "form-control-plaintext", placeholder = "Jumlah Barang" })
+        @Html.ValidationMessageFor(barang => barang.JumlahBarang)
+    </div>
+    <br /><br />
+    <input class="btn btn-primary" type="submit" name="Tambah Barang" value="Tambah Barang" />
+</form>

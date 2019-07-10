@@ -1,0 +1,21 @@
+﻿@model BelanjaDulu.Models.Keranjang
+
+@{
+    ViewBag.title = "Edit Barang";
+    Layout = "~/Views/Shared/LayoutKeranjang.cshtml";
+}
+@section header{
+<h4>Edit Barang</h4>
+}
+    <form class="form-group" action="~/update" method="post">
+        @Html.TextBoxFor(barang => barang.BarangId, new { @class = "form-control-plaintext", @readonly = "true", placeholder = "Id Barang" })
+        @Html.ValidationMessageFor(barang => barang.BarangId)
+        @Html.TextBoxFor(barang => barang.NamaBarang, new { @class = "form-control-plaintext", placeholder = "Id Barang" })
+        @Html.ValidationMessageFor(barang => barang.NamaBarang)
+        @Html.TextBoxFor(barang => barang.HargaBarang, new { @class = "form-control-plaintext", placeholder = "Id Barang" })
+        @Html.ValidationMessageFor(barang => barang.HargaBarang)
+        @Html.TextBoxFor(barang => barang.JumlahBarang, new { @class = "form-control-plaintext", placeholder = "Id Barang" })
+        @Html.ValidationMessageFor(barang => barang.JumlahBarang)
+        <br /><br />
+        <input class="btn btn-primary" type="submit" name="Edit Barang" value="Edit Barang" />
+    </form>      

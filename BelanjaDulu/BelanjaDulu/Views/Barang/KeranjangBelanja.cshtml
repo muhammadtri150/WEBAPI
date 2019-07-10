@@ -1,0 +1,52 @@
+﻿@model IEnumerable<BelanjaDulu.Models.Keranjang>
+
+@{
+    ViewBag.title = "Keranjang Belanja";
+    Layout = "~/Views/Shared/LayoutKeranjang.cshtml";
+}
+
+@section header{
+    <center><h4>Keranjang Belanja</h4></center>
+}
+    <form>
+        <table class="table table-striped">
+            <tr>
+                <td>Id Barang</td>
+                <td>Nama Barang</td>
+                <td>Harga Barang</td>
+                <td>Jumlah Barang</td>
+                <td>Sub Total</td>
+                <td>&emsp;</td>
+            </tr>
+
+            @{
+                List<int> total = new List<int>
+                ();
+
+                foreach (var barang in Model)
+                {
+
+                    int subtotal = barang.HargaBarang * barang.JumlahBarang;
+                    total.Add(subtotal);
+                    <tr>
+                        <td>@barang.BarangId</td>
+                        <td>@barang.NamaBarang</td>
+                        <td>@barang.HargaBarang</td>
+                        <td>@barang.JumlahBarang</td>
+                        <td>@(barang.SubTotal = (@barang.JumlahBarang * @barang.HargaBarang))</td>
+                        <td>
+                            <a href="~/edit/@barang.BarangId" class="btn btn-primary stretched-link">Edit</a>
+                            <a href="~/delete/@barang.BarangId" class="btn btn-warning">Delete</a>
+                        </td>
+                    </tr>
+
+                }
+                <tr>
+                    <td colspan="6" align="center">Total Harga : @total.Sum()</td>
+                </tr>
+                <tr>
+                    <td colspan="6" align="center"><a href="~/tambah" class="btn btn-primary btn-lg btn-block">Add</a></td>
+                </tr>
+            }
+        </table>
+    </form>        
