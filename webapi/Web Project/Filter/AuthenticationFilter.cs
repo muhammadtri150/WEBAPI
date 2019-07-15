@@ -24,7 +24,7 @@ namespace Web_Project.Filters
                 string[] creds = decoded.Split(':');
                 string username = creds[0];
                 string userToken = creds[1];
-                using (APIEntities api = new APIEntities())
+                using (APIEntities1 api = new APIEntities1())
                 {
                     User user = api.Users.Where(u => u.username.Equals(username)).FirstOrDefault();
                     if (user == null) throw new Exception();

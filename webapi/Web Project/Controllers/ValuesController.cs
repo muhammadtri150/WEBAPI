@@ -14,7 +14,7 @@ namespace Web_Project.Controllers
         // GET api/values
         public IEnumerable<ItemDTO> Get()
         {
-            using(APIEntities api = new APIEntities())
+            using(APIEntities1 api = new APIEntities1())
             {
                 return api.Items.Select(i => 
                     new ItemDTO {

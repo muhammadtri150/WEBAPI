@@ -206,8 +206,8 @@
     <Content Include="Global.asax" />
     <Content Include="Models\API.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>API.Context.cs</LastGenOutput>
       <DependentUpon>API.edmx</DependentUpon>
+      <LastGenOutput>API.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\API.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

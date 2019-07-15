@@ -13,10 +13,10 @@ namespace Web_Project.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class APIEntities : DbContext
+    public partial class APIEntities1 : DbContext
     {
-        public APIEntities()
-            : base("name=APIEntities")
+        public APIEntities1()
+            : base("name=APIEntities1")
         {
         }
     

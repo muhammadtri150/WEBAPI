@@ -31,7 +31,7 @@ namespace Web_Project.Controllers
         {
             if (ModelState.IsValid)
             {
-                using(APIEntities api = new APIEntities())
+                using(APIEntities1 api = new APIEntities1())
                 {
                     User usr = api.Users.FirstOrDefault(u => 
                                 u.username.Equals(user.username) && 
@@ -55,7 +55,7 @@ namespace Web_Project.Controllers
         public ActionResult Logout()
         {
             UserDTO user = (UserDTO)Session["user"];
-            using (APIEntities api = new APIEntities())
+            using (APIEntities1 api = new APIEntities1())
             {
                 User u = api.Users.Find(user.UserId);
                 u.token = null;

@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="item_id" />
           </Key>
-          <Property Name="item_id" Type="int" Nullable="false" />
+          <Property Name="item_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="price" Type="bigint" Nullable="false" />
           <Property Name="stock" Type="smallint" Nullable="false" />
@@ -36,7 +36,7 @@
           <Key>
             <PropertyRef Name="item_id" />
           </Key>
-          <Property Name="item_id" Type="Int32" Nullable="false" />
+          <Property Name="item_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="price" Type="Int64" Nullable="false" />
           <Property Name="stock" Type="Int16" Nullable="false" />
@@ -50,7 +50,7 @@
           <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="token" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="APIEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="APIEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Items" EntityType="Self.Item" />
           <EntitySet Name="Users" EntityType="Self.User" />
         </EntityContainer>
@@ -59,7 +59,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="APIModelStoreContainer" CdmEntityContainer="APIEntities">
+        <EntityContainerMapping StorageEntityContainer="APIModelStoreContainer" CdmEntityContainer="APIEntities1">
           <EntitySetMapping Name="Items">
             <EntityTypeMapping TypeName="APIModel.Item">
               <MappingFragment StoreEntitySet="Items">
